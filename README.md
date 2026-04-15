@@ -151,3 +151,7 @@ const char* serverUrl = "http://192.168.1.43:3000";
 ## 📄 Licencia
 
 MIT — libre para uso personal y proyectos educativos.
+
+## Autor
+
+- [delpierodev](https://github.com/delpierodev)
