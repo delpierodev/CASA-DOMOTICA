@@ -1,0 +1,112 @@
+:root {
+  --bg: #081323;
+  --bg-alt: #0f1b33;
+  --ink: #e8f5ff;
+  --ink-muted: #9ab3cc;
+  --panel: rgba(17, 30, 54, 0.82);
+  --panel-solid: #12203b;
+  --stroke: rgba(124, 184, 255, 0.28);
+  --accent: #00c2ff;
+  --accent-2: #3bf5c5;
+  --danger: #ff5f4d;
+  --warning: #ffad33;
+  --success: #24e46e;
+  --shadow: 0 16px 36px rgba(1, 10, 28, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Rajdhani", sans-serif;
+  background:
+    radial-gradient(circle at 14% 15%, rgba(0, 194, 255, 0.2), transparent 32%),
+    radial-gradient(circle at 82% 78%, rgba(59, 245, 197, 0.14), transparent 34%),
+    linear-gradient(140deg, #050c18, #0b1d37 42%, #09172b 100%);
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  background-image:
+    linear-gradient(rgba(131, 194, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(131, 194, 255, 0.06) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.22;
+  z-index: -2;
+}
+
+body::after {
+  background: radial-gradient(circle, transparent 35%, rgba(2, 8, 20, 0.72) 100%);
+  z-index: -1;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  margin: 0 0 8px;
+  color: #8ec5ff;
+  text-transform: uppercase;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+button {
+  padding: 11px 12px;
+  border: 1px solid rgba(0, 194, 255, 0.38);
+  border-radius: 12px;
+  cursor: pointer;
+  color: #ecfbff;
+  background: linear-gradient(135deg, #0f2849, #173766);
+  width: 100%;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: transform 0.22s ease, filter 0.22s ease, box-shadow 0.22s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 0 0 1px rgba(158, 224, 255, 0.28), 0 10px 22px rgba(2, 8, 30, 0.55);
+}
+
+.reveal {
+  animation: rise-in 650ms ease both;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

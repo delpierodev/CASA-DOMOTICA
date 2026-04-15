@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <div>
+    <p class="eyebrow">CASA DOMOTICA</p>
+    <h1>Smart Home</h1>
+  </div>
+  <a href="/logout" class="logout-btn">Cerrar sesion</a>
+</div>
+
+<div class="main">
+
+<div class="topbar reveal">
+  <div>
+    <h1 class="dashboard-title">Panel de Control</h1>
+    <p class="topbar-subtitle">Monitorea temperatura, seguridad y ambientes en tiempo real.</p>
+  </div>
+  <div class="chip-row">
+    <div class="chip">
+      <span class="chip-label">Ultima accion</span>
+      <strong id="ultima">---</strong>
+    </div>
+    <div class="chip">
+      <span class="chip-label">Estado sistema</span>
+      <strong id="estadoSistema" class="status-live status-offline">desconectado</strong>
+    </div>
+    <div class="chip">
+      <span class="chip-label">Hora local</span>
+      <strong id="horaActual">--:--:--</strong>
+    </div>
+  </div>
+</div>
+
+<div class="card temperatura-card reveal">
+  <h3>CLIMA INTERIOR</h3>
+  <div class="temp-box">
+    <div class="temp-item">
+      <span class="temp-value" id="temp">--</span>
+      <span class="temp-label">°C</span>
+    </div>
+    <div class="temp-item">
+      <span class="temp-value" id="hum">--</span>
+      <span class="temp-label">%</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">SEGURIDAD</div>
+
+<div class="seguridad-wrapper reveal">
+
+<div class="seguridad-left">
+
+<div class="card">
+<h3>COCHERA</h3>
+<div class="buttons">
+<button class="on" onclick="enviar('S')">ABRIR</button>
+<button class="off" onclick="enviar('s')">CERRAR</button>
+</div>
+<p class="device-feedback" id="feedback-S">Sin acciones recientes.</p>
+</div>
+
+<div class="card">
+<h3>SENSOR</h3>
+<div class="buttons">
+<button class="sensor" onclick="enviar('U')">ACTIVAR</button>
+<button class="off" onclick="enviar('u')">DESACTIVAR</button>
+</div>
+<p class="device-feedback" id="feedback-U">Sin acciones recientes.</p>
+</div>
+
+</div>
+
+<div class="camera-widget">
+
+<h3>CÁMARA</h3>
+<p class="camera-status">Estado: <span id="camaraEstado">apagada</span></p>
+<p class="camera-detail" id="camaraDetalle">Stream inactivo.</p>
+
+<div class="camera-box-small">
+  <img id="camara" class="camera-frame-small">
+</div>
+
+
+<div class="buttons">
+<button class="on" onclick="encenderCam()">ON</button>
+<button class="off" onclick="apagarCam()">OFF</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="section-title">AMBIENTES</div>
+<div class="grid reveal" id="dispositivos"></div>
+
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="script.js"></script>
+</body>
+</html>
